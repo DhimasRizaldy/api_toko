@@ -1,0 +1,140 @@
+### 1. Test API Users
+### create data users (POST)
+POST http://localhost:3000/api/v1/users
+Content-Type:  application/json
+
+{
+  "username": "dhimasrizaldy01",
+  "email": "dhimasrizaldy01@gmail.com",
+  "password": "dhimasrizaldy01",
+  "profile": {
+    "name": "Dhimas Rizaldy",
+    "gender": "Male",
+    "telpon": "6289531937823",
+    "address": "jln.marga gg.mushola no.128 Bandar Lmapung"
+  }
+}
+
+### get all users
+GET http://localhost:3000/api/v1/users
+
+### get detail users by: id
+GET http://localhost:3000/api/v1/users/2
+
+### get data users with pagination
+GET http://localhost:3000/api/v1/users?limit=2&page2
+
+### Update data users by: id
+PUT http://localhost:3000/api/v1/users/1
+Content-Type: application/json
+
+{
+  "username": "yayanruhiyan020102",
+  "email": "yayanruhiyan09@gmail.com",
+  "password": "yayan020102"
+}
+
+### delete users
+DELETE http://localhost:3000/api/v1/users/1
+
+#### 2. Test API Profiles
+### 1. Create data Profiles (POST)
+POST http://localhost:3000/api/v1/profiles
+Content-Type: : application/json
+
+{
+  "name": "Dhimas Rizaldy",
+  "gender": "Male",
+  "telpon": "6289521937647",
+  "address": "jln.marga gg.mushola no.128 Bandar Lmapung",
+  "userID": 2
+}
+
+### 2. Get details Profile by:id
+GET http://localhost:3000/api/v1/profiles/1
+
+### 3. Update profiles by: id
+PUT http://localhost:3000/api/v1/profiles/2
+Content-Type: application/json
+
+{
+  "name": "Dhimas Rizaldy",
+  "gender": "Male",
+  "telpon": "6289521937647",
+  "address": "jln.marga gg.mushola no.128 Bandar Lmapung",
+  "userID": 2
+}
+
+### 3. Test API products
+### 1. create data products
+POST http://localhost:3000/api/v1/products
+Content-Type: application/json
+
+{
+  "name":"Speaker Dazumba DZ87000",
+  "price":750000,
+  "stock":5,
+  "description":"Speaker Dazumba DZ87000 adalah sebuah speaker berkualitas yang dirancang untuk memberikan kenyamanan dan produktivitas dalam penggunaan sehari-hari."
+}
+
+### 2. Get all data products
+GET http://localhost:3000/api/v1/products
+
+### 3. Get all data products with pagination
+GET http://localhost:3000/api/v1/products?limit=2&page=1
+
+### 4. get products by: id (detail)
+GET  http://localhost:3000/api/v1/products/2
+
+### 5. update products 
+PUT http://localhost:3000/api/v1/products/1
+Content-Type: application/json
+
+{
+    "name": "Monitor Xiaomi 34 Inch Curve",
+    "price": 5500000,
+    "stock": 8,
+    "description": "Monitor Xiaomi 34 Inch Curve adalah sebuah monitor berkualitas yang dirancang untuk memberikan kenyamanan dan produktivitas dalam penggunaan sehari-hari."
+}
+
+### 6. delete products
+DELETE http://localhost:3000/api/v1/products/2
+
+
+#### 4. Test API Transactions
+### 1. create data transctions (POST)
+POST http://localhost:3000/api/v1/transactions
+Content-Type: application/json
+
+{
+  "userID": 2,
+  "productID": 5,
+  "date": "2023-10-18T00:00:00.000Z",
+  "quantity": 2
+}
+
+
+### 2. get all data transactions
+GET http://localhost:3000/api/v1/transactions
+
+### 3. get all data transaction with pagination
+GET http://localhost:3000/api/v1/transactions?limit=2&page:1
+
+### 4. get detail transaction by: id
+GET http://localhost:3000/api/v1/transactions/5
+
+### 5. update transactions 
+PUT http://localhost:3000/api/v1/transactions/5
+Content-Type: application/json
+
+{
+  "transactionID": 2,
+  "userID": 1,
+  "productID": 5,
+  "date": "2023-10-18T00:00:00.000Z",
+  "quantity": 1
+
+}
+
+### 6. delete transactions
+DELETE http://localhost:3000/api/v1/transactions/3
